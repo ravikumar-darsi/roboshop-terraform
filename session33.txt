@@ -17,3 +17,25 @@ from the VPC to the internet, The client does not the exact location of you. It 
 Demo
 create a ec2 instance with name openvpn  --> ami --> devopspractice --> no keypair --> default vpc --> allow all from SG --> then create 
 
+log onto that instance via supperputty as usual
+take sudo access with 
+commands
+ --> sudo su -
+---> curl -O https://raw.githubusercontent.com/angristan/openvpn-install/master/openvpn-install.sh
+---> chmod +x openvpn-install.sh
+---> ./openvpn-install.sh
+---> give the public ip of the instance
+---> IPv6 [Y/n]: name
+---> Port choice[1-3]: 1
+---> Protocol [1-2]: 2
+---> DNS [1-12]: 11 [here your wish]
+---> Enable compression? [y/n]: n 
+---> Customize encryption settings? [y/n]: n 
+click any key
+Client Name: your wish [Example: ravikumar]
+Select an option [1-2]: 1 [Passwoed less client] 
+
+---> ls -l 
+we will  a file wiht name ravikumar.ovpn [Copy the whole in to your local laptop from the instance ] save the file with same name ravikumar.ovpn and file type as All files
+After this install openvpn client from the chrome in your laptop
+Search for openvpn in local laptop and click on plus + symbol  upload the saved file.
