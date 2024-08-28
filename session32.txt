@@ -1,0 +1,22 @@
+SG(Security Group) Module creation and creation of all security groups
+
+In this folder we are creating separate folder like 01-vpc, 02-something else
+
+Create a new folder 02-SG
+To create a Sg we need the vpc id,like in which vpc we are creating security groups
+
+we have outputs in the 01-vpc folder, the data should come from this folder to the 02-sg folder,
+what we should we do to have the ouput ?
+Let's say think of this two folder are like two projects?
+
+to have the data or to transfer the data from one folder to other , we have SSM parameter(it is like configuration storage) in AWS
+
+open aws console--> Systems Manager----> on left side select Parameter Store
+Create parameter--> Name: /roboshop/dev/vpc_id
+                    Description: This is the roboshop dev environment vpc id
+                    Data Type: text
+                    Value: vpc-745896
+                    click on create
+The create parameter can used as reference in the Security Groups 
+Note: the data sourcing is different ( it used to querying the data from the providers)
+

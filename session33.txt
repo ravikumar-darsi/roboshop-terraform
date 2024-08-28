@@ -1,0 +1,19 @@
+the mongodb instance is created in the private subnet(that is database subnet)
+here, we don't get the public ip address
+If we don't have the public ip, how can we connect to the instance ?
+There 2 ways to connect to it :
+
+The first way is 
+---> First connect to the any public instance
+---> From the public instance you can connect to private (we called this as jump server)
+
+The Second way is connecting to VPN (Mostly used in all companies is VPN )
+
+What is VPN and how does it work ?
+Let's say  you are working from your laptop in your home network and you are trying to connect to
+the AWS VPC which has VPN configured, if you want to browse the internet from your laptop, you can sen the request 
+from the VPC to the internet, The client does not the exact location of you. It only knows from where does the traffic comes (in this case it will be  of the VPC )
+
+Demo
+create a ec2 instance with name openvpn  --> ami --> devopspractice --> no keypair --> default vpc --> allow all from SG --> then create 
+
