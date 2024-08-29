@@ -1,0 +1,24 @@
+Load Balancer
+Target groups
+rules
+launch template
+Auto Scaling
+Auto Scaling policy
+
+
+Manual Demo: 
+2 Nginx servers 
+--> Name: nginx-ui two servers, 
+--> AMI:devops-practice
+--> t2.micro , no key pair
+--> SG: default vpc, allow All 
+user data:
+#!/bin/bash
+yum install nginx -y
+mkdir -p /usr/share/nginx/html/ui
+echo "<h1> Hi there..! we are from UI team </h1>"> /usr/share/nginx/html/ui/index.html
+systemctl restart nginx 
+
+launch the instance and try running their ip address and /ui along with public ip
+
+create application load balancer 
